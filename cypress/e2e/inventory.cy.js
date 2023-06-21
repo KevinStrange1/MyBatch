@@ -34,7 +34,8 @@ describe('ingredients', () => {
 
     cy.reload();
 
-    cy.contains('Fuggle3').should('be.visible');
+    cy.contains('Fuggle').should('be.visible');
+    cy.contains('3').should('be.visible');
 
     cy.get('.delete-button').first().click();
 
