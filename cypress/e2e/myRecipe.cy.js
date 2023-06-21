@@ -6,7 +6,8 @@ describe('template spec', () => {
 
     cy.contains('My Recipes').click();
 
-    cy.contains('Release creativity, create your own recipe').should('be.visible');
+    cy.contains('Release creativity').should('be.visible');
+    cy.contains('Create your own recipe').should('be.visible');
 
     cy.contains('Name').should('be.visible');
 
