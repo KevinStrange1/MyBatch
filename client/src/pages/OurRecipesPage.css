@@ -4,10 +4,6 @@
   align-items: center;
 }
 
-.our-recipes {
-  background-color: var(--light-background);
-}
-
 .recipe-item {
   border-radius: 20px;
   background-color: var(--light-background);
