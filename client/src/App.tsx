@@ -61,11 +61,11 @@ const App: FC = () => {
           path="/how-to-brew"
           element={<HowToBrew />}
         ></Route>
-      </Routes>
       <Route
         path="/error"
         element={<ErrorPage />}
       ></Route>
+      </Routes>
     </div>
   );
 };
