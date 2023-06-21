@@ -28,7 +28,7 @@ const MyRecipesPage: FC<MyRecipesPageProps> = ({ myRecipes, allRecipes }) => {
   };
 
   return (
-    <div className="container">
+    <div className="my-recipe-container">
       <div className="create-recipe">
         <CreateRecipe
           myRecipes={myRecipes}
@@ -36,13 +36,13 @@ const MyRecipesPage: FC<MyRecipesPageProps> = ({ myRecipes, allRecipes }) => {
           onData={handleRecipeFromChild}
         />
       </div>
-      <div className="my-recipe-list">
+      <div className="my-recipe-list-page">
         <MyRecipeList
           myRecipes={allMyRecipes}
           onData={handleSelectionFromChild}
         />
       </div>
-      <div className="my-recipe-details">
+      <div className="my-recipe-details-page">
         <MyRecipeDetails selectedRecipe={selectedRecipe} />
       </div>
     </div>

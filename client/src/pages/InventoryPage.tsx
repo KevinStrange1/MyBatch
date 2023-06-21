@@ -123,11 +123,6 @@ const InventoryPage: FC<InventoryPageProps> = ({ allRecipes }) => {
         deleteIngredient={deleteIngredient}
         clearSelectedIngredient={clearSelectedIngredient}
       />
-      <img
-        className="bottom-img"
-        src={require("../Images/Homebrew.png")}
-        alt="Homebrew beer"
-      />
     </div>
   );
 };

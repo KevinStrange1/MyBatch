@@ -1,11 +1,86 @@
-.create-recipe {
-  background-color: var(--light-background) !important;
+.my-recipe-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
 }
 
-.my-recipe-list {
-  background-color: var(--light-background) !important;
+.create-recipe,
+.my-recipe-details-page,
+.my-recipe-list-page {
+  background-color: var(--light-background);
+  border-radius: 20px;
+  margin: 20px;
+  padding: 20px;
+  width: 100%;
+  box-shadow: rgb(255, 255, 255) 0px 2px 5px -1px,
+    rgb(255, 255, 255) 0px 1px 3px -1px;
 }
 
-.my-recipe-details {
-  background-color: var(--light-background) !important;
+#instructions {
+  height: 200px;
+  width: 400px;
+}
+
+#hops,
+#hopsQuantity,
+#malts,
+#maltsQuantity,
+#yeast,
+#yeastQuantity {
+  width: 200px;
+}
+
+#hopsQuantity,
+#maltsQuantity,
+#yeastQuantity {
+  margin-left: 18px;
+}
+
+.my-recipes {
+  list-style: none;
+}
+
+.list {
+  list-style: none;
+  margin: 5px;
+}
+
+.create-recipe-btn {
+  margin-left: 20px;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-bottom: 10px;
+  margin-left: 5px;
+}
+
+.head {
+  font-size: 26px;
+}
+
+.your-list-li {
+  margin: 20px;
+  padding: 5px;
+}
+
+.my-recipe-name {
+  font-size: 20px;
+}
+
+.my-recipe-style {
+  font-size: 12px;
+}
+
+@media screen and (min-width: 650px) {
+  .my-recipe-container {
+    max-width: 800px;
+  }
+
+  .create-recipe-btn {
+    margin-left: 200px;
+  }
 }

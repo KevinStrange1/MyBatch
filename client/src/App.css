@@ -5,12 +5,7 @@
   --light-background: #414141;
   --text: #ffffff;
   --orange: #ff791f;
-}
-
-.App {
-  height: 100%;
-  width: 100%;
-  background-color: var(--background);
+  --crimson: #ca3142;
 }
 
 * {
@@ -18,8 +13,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: var(--background);
   font-family: "Libre Franklin", sans-serif;
+}
+
+.App {
+  height: 100%;
+  width: 100%;
+  background-color: var(--background);
 }
 
 .navbar {

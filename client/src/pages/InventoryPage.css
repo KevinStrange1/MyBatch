@@ -4,6 +4,7 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
+  margin: auto;
 }
 
 .ingredient-container {
@@ -49,10 +50,10 @@ h3,
 }
 
 button {
-  background-color: crimson;
+  background-color: var(--crimson);
   border-radius: 3px;
-  border: 1px solid crimson;
-  box-shadow: crimson 0 1px 0 0 inset;
+  border: 1px solid var(--crimson);
+  box-shadow: var(--crimson) 0 1px 0 0 inset;
   box-sizing: border-box;
   color: var(--text);
   cursor: pointer;
@@ -95,14 +96,10 @@ button:active {
   margin-bottom: 10px;
 }
 
-.bottom-img {
-  width: 50vh;
-}
-
 @media screen and (min-width: 768px) {
   .inventory {
     justify-content: center;
-    max-width: 1200px;
+    max-width: 900px;
   }
 
   .ingredient-container {
@@ -110,4 +107,3 @@ button:active {
     max-width: 450px;
   }
 }
-

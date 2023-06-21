@@ -87,6 +87,7 @@
 @media (min-width: 600px) {
   .homepage-container {
     padding: 40px;
+    max-width: 900px;
   }
 
   .title-img {

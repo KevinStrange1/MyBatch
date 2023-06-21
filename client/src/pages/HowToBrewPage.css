@@ -16,6 +16,8 @@
   max-width: 700px;
   padding: 30px 10px;
   border-radius: 20px;
+  box-shadow: rgb(255, 255, 255) 0px 2px 5px -1px,
+    rgb(255, 255, 255) 0px 1px 3px -1px;
 }
 
 .title {
