@@ -3,6 +3,7 @@ import { postMyRecipe } from "../utils/ApiService";
 import { MyRecipe } from "../types/MyRecipe";
 import { BeerRecipe } from "../types/BeerRecipe";
 import { InputRecipe } from "../types/InputRecipe";
+import { useNavigate } from "react-router-dom";
 
 interface CreateRecipeType {
   myRecipes: MyRecipe[];
@@ -24,6 +25,8 @@ const CreateRecipe: FC<CreateRecipeType> = ({ allRecipes, onData }) => {
   const allHops = new Set();
   const allMalts = new Set();
   const allYeast = new Set();
+
+  const navigate = useNavigate();
 
   if (allRecipes) {
     allRecipes.forEach((recipe) => {
@@ -53,7 +56,9 @@ const CreateRecipe: FC<CreateRecipeType> = ({ allRecipes, onData }) => {
       const savedRecipe = await postMyRecipe(recipeData);
       onData(savedRecipe);
     } catch (err) {
-      console.log(err);
+      console.log('Server Error, Failed to create ingredient');
+      console.error(err);
+      navigate('/error');
     }
   };
 

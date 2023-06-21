@@ -5,6 +5,7 @@ import {
   deleteIngredientFromDb,
 } from "../utils/ApiService";
 import "./InventoryPage.css";
+import { useNavigate } from "react-router-dom";
 import { BeerRecipe } from "../types/BeerRecipe";
 import { Ingredient } from "../types/Ingredient";
 import IngredientComponent from "../components/IngredientComponent";
@@ -24,6 +25,8 @@ const InventoryPage: FC<InventoryPageProps> = ({ allRecipes }) => {
   const allMalts = new Set<string>();
   const allYeasts = new Set<string>();
 
+  const navigate = useNavigate()
+
   allRecipes?.forEach((recipe) => {
     recipe.ingredients.hops.forEach((hop) => allHops.add(hop.name));
     recipe.ingredients.malts.forEach((malt) => allMalts.add(malt.name));
@@ -42,13 +45,25 @@ const InventoryPage: FC<InventoryPageProps> = ({ allRecipes }) => {
   }, []);
 
   const refreshIngredients = async () => {
-    const allIngredients = await getAllIngredients();
-    setIngredients(allIngredients);
+    try {
+      const allIngredients = await getAllIngredients();
+      setIngredients(allIngredients);
+    } catch(err) {
+      console.log('Server Error, Failed to retreive ingredients');
+      console.error(err);
+      navigate('/error');
+    }
   };
 
   const deleteIngredient = async (ingredientId: string) => {
-    await deleteIngredientFromDb(ingredientId);
-    refreshIngredients();
+    try {
+      await deleteIngredientFromDb(ingredientId);
+      refreshIngredients();
+    } catch(err) {
+      console.log('Server Error, Failed to create ingredient');
+      console.error(err);
+      navigate('/error');
+    }
   };
 
   const addIngredient = async (
@@ -56,7 +71,13 @@ const InventoryPage: FC<InventoryPageProps> = ({ allRecipes }) => {
     quantity: string,
     ingredientType: string
   ) => {
-    await createIngredients(ingredientName, quantity, ingredientType);
+    try {
+      await createIngredients(ingredientName, quantity, ingredientType);
+    } catch (err) {
+      console.log('Server Error, Failed to create ingredient');
+      console.error(err);
+      navigate('/error');
+    }
     const newIngredient: Ingredient = {
       _id: "",
       name: ingredientName,

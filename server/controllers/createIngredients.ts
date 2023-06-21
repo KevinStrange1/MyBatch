@@ -4,7 +4,7 @@ import { CreatedIngredient } from '../types';
 
 export const createIngredients = async (req: Request, res: Response): Promise<void> => {
   try {
-    const { name, amount, type } = req.body;
+    const { name ,amount, type } = req.body;
 
     const ingredient: CreatedIngredient = await Ingredients({
       name,
