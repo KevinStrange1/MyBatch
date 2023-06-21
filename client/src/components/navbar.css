@@ -1,6 +1,6 @@
 .header {
   display: none;
-  background-color: rgb(65, 65, 65);
+  background-color: var(--light-background);
   height: 60px;
 }
 
@@ -12,7 +12,7 @@
 .call_to_action {
   height: 40px;
   width: 400px;
-  background-color: crimson;
+  background-color: var(--crimson);
   border-radius: 30px;
   display: flex;
   justify-content: center;
@@ -23,8 +23,51 @@
 
 .call_to_action_text {
   text-decoration: none;
-  background-color: crimson;
+  background-color: var(--crimson);
   font-size: 25px;
+}
+
+.navbar {
+  background-color: var(--light-background);
+}
+
+.mainNav {
+  font-size: 30px;
+  font-family: arial;
+  margin-bottom: 40px;
+  padding: 15px;
+  background-color: var(--light-background);
+}
+
+.mainNav ul {
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  background-color: var(--light-background);
+}
+
+.mainNav li {
+  align-items: stretch;
+  background-color: var(--light-background);
+}
+
+.mainNav a {
+  cursor: pointer;
+  width: 100%;
+  text-decoration: none;
+  background-color: var(--light-background);
+}
+
+.mainNav a:hover {
+  color: var(--crimson);
+}
+
+.mainNav .active-link {
+  text-decoration: underline;
+}
+
+.listNav {
+  background-color: var(--light-background);
 }
 
 @media (max-width: 800px) {
@@ -38,34 +81,34 @@
     justify-content: space-between;
     padding: 15px 60px;
   }
-  
+
   .logo {
     text-decoration: none;
     font-family: arial;
     font-size: 25px;
-    background-color: rgb(65, 65, 65);
+    background-color: var(--light-background);
   }
-  
+
   .hamburger_menu {
     margin-top: 5px;
     cursor: pointer;
-    background-color: rgb(65, 65, 65);
+    background-color: var(--light-background);
   }
-  
+
   .bar {
     width: 30px;
     height: 3px;
     margin-bottom: 5px;
-    background-color: white;
+    background-color: var(--text);
   }
-  
+
   .dropdown_nav {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 40px;
   }
-  
+
   .dropdown_list {
     list-style-type: none;
     font-size: 40px;
@@ -73,7 +116,7 @@
     margin-bottom: 20px;
     font-family: arial;
   }
-  
+
   .dropdown_list_item {
     text-decoration: none;
   }

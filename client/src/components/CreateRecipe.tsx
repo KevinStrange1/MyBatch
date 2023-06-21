@@ -59,8 +59,6 @@ const CreateRecipe: FC<CreateRecipeType> = ({ allRecipes, onData }) => {
 
   return (
     <div className="my-recipes-form">
-      <h2>Release creativity</h2>
-      <h2>Create your own recipe</h2>
       <form onSubmit={handleSubmit} className="new-recipe-form">
         <div className="left-side">
           <label htmlFor="recipeName">Name</label>

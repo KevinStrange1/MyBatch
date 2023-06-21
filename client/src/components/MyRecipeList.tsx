@@ -1,32 +1,61 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from "react";
 import { MyRecipe } from "../types/MyRecipe";
+import MyRecipeDetails from "./MyRecipeDetails";
 
-interface MyRecipesList {
-  myRecipes: MyRecipe[],
-  onData: (data: MyRecipe) => void
+interface MyRecipesListProps {
+  myRecipes: MyRecipe[];
+  selectedRecipe: MyRecipe | null;
+  onData: (data: MyRecipe) => void;
 }
 
-const MyRecipeList: FC<MyRecipesList> = ({ myRecipes, onData }) => {
+const MyRecipeList: FC<MyRecipesListProps> = ({ myRecipes, onData }) => {
+  const [selectedRecipe, setSelectedRecipe] = useState<MyRecipe | null>(null);
 
-  return <div className="my-recipe-list">
-    <h2>Your recipe list</h2>
-    <ul className="my-recipes">
-      {myRecipes &&
-        myRecipes.map((recipe: MyRecipe) => (
+  const handleSelection = (recipe: MyRecipe) => {
+    setSelectedRecipe((prevSelectedRecipe) => {
+      if (prevSelectedRecipe === recipe) {
+        return null;
+      } else {
+        onData(recipe);
+        return recipe;
+      }
+    });
+  };
+
+  return (
+    <div className="my-recipe-list">
+      <h2>Your recipe list</h2>
+      <ul className="my-recipes">
+        {myRecipes.map((recipe: MyRecipe) => (
           <li
-            className="your-list-li"
+            className={`your-list-li ${
+              selectedRecipe && selectedRecipe._id === recipe._id
+                ? "selected"
+                : ""
+            }`}
             key={recipe._id}
-            onClick={() => onData(recipe)}
+            onClick={() => handleSelection(recipe)}
           >
+            <div
+              className={`triangle-${
+                selectedRecipe && selectedRecipe._id === recipe._id
+                  ? "up"
+                  : "down"
+              }`}
+            />
             <span className="my-recipe-name">
               {recipe.name}
               <br />
             </span>
             <span className="my-recipe-style">{recipe.style}</span>
+            {selectedRecipe && selectedRecipe._id === recipe._id && (
+              <MyRecipeDetails selectedRecipe={recipe} />
+            )}
           </li>
         ))}
-    </ul>
-  </div>
-}
+      </ul>
+    </div>
+  );
+};
 
 export default MyRecipeList;

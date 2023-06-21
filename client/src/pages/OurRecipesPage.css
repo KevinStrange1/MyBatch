@@ -8,6 +8,7 @@
   border-radius: 20px;
   background-color: var(--light-background);
   margin: 30px 60px;
+  box-shadow: inset 2px 3px 5px #000000, 0px 1px 1px #333;
 }
 
 .ourRecipes li,
@@ -41,10 +42,9 @@
   border-right: 15px solid transparent;
   border-top: 26px solid white;
   background-color: var(--light-background);
-  margin-top: 5px;
-  margin-bottom: 10px;
-  margin-left: 20px;
+  margin: 5px 20px 15px 0;
   cursor: pointer;
+  float: right;
 }
 
 .triangle-up {
@@ -54,9 +54,7 @@
   border-right: 15px solid transparent;
   border-bottom: 26px solid white;
   background-color: var(--light-background);
-  margin-top: 5px;
-  margin-bottom: 10px;
-  margin-left: 20px;
+  margin: 5px 20px 15px 0;
   cursor: pointer;
+  float: right;
 }
-

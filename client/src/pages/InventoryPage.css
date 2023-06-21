@@ -7,6 +7,10 @@
   margin: auto;
 }
 
+.inventory-title {
+  position: absolute;
+}
+
 .ingredient-container {
   width: 100%;
   padding: 10px;
@@ -23,8 +27,7 @@
   border-radius: 20px;
   transform: translateY(-20px);
   transition: transform 0.3s ease-in-out;
-  box-shadow: rgb(255, 255, 255) 0px 2px 5px -1px,
-    rgb(255, 255, 255) 0px 1px 3px -1px;
+  box-shadow: inset 2px 3px 5px #000000, 0px 1px 1px #333;
 }
 
 .ingredient:hover {
@@ -40,7 +43,7 @@ h3,
 .ingredient-id,
 .ingredient-name,
 .ingredient-amount {
-  background-color: #414141;
+  background-color: var(--light-background);
   color: var(--text);
   margin: 5px;
 }
@@ -78,8 +81,7 @@ button {
 
 button:hover,
 button:focus {
-  background-color: #b3d3ea;
-  color: black;
+  background-color: red;
 }
 
 button:focus {
@@ -87,8 +89,7 @@ button:focus {
 }
 
 button:active {
-  background-color: #a0c7e4;
-  color: black;
+  background-color: red;
   box-shadow: none;
 }
 

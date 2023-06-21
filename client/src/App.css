@@ -16,51 +16,17 @@
   font-family: "Libre Franklin", sans-serif;
 }
 
+html {
+  height: 100%;
+  background-color: var(--background);
+}
+
 .App {
   height: 100%;
   width: 100%;
   background-color: var(--background);
 }
 
-.navbar {
-  background-color: var(--light-background);
-}
-
-.mainNav {
-  font-size: 30px;
-  font-family: arial;
-  margin-bottom: 40px;
-  padding: 15px;
-  background-color: rgb(65, 65, 65);
-}
-
-.mainNav ul {
-  display: flex;
-  justify-content: space-around;
-  list-style-type: none;
-  background-color: var(--light-background);
-}
-
-.mainNav li {
-  align-items: stretch;
-  background-color: var(--light-background);
-}
-
-.mainNav a {
-  cursor: pointer;
-  width: 100%;
-  text-decoration: none;
-  background-color: var(--light-background);
-}
-
-.mainNav a:hover {
-  color: red;
-}
-
-.mainNav .active-link {
-  text-decoration: underline;
-}
-
-.listNav {
-  background-color: var(--light-background);
+input {
+  padding-left: 5px;
 }

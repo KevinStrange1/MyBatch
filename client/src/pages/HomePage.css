@@ -80,8 +80,7 @@
   color: var(--text);
   padding: 10px;
   border-radius: 20px;
-  box-shadow: rgb(255, 255, 255) 0px 2px 5px -1px,
-    rgb(255, 255, 255) 0px 1px 3px -1px;
+  box-shadow: inset 2px 3px 5px #000000, 0px 1px 1px #333;
 }
 
 @media (min-width: 600px) {

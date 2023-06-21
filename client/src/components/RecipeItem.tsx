@@ -41,55 +41,59 @@ interface RecipeItemType {
   recipe: BeerRecipe;
 }
 
-const RecipeItem: FC<RecipeItemType> = ({recipe}) => {
+const RecipeItem: FC<RecipeItemType> = ({ recipe }) => {
   const [isClicked, setIsClicked] = useState(false);
   const [triangleDirection, setTriangleDirection] = useState("triangle-down");
   const [detailsRender, setDetailsRender] = useState(<></>);
 
   const handleClick = () => {
-    if(isClicked) {
+    if (isClicked) {
       setIsClicked(false);
-      setTriangleDirection('triangle-down');
+      setTriangleDirection("triangle-down");
       setDetailsRender(<></>);
     } else {
       setIsClicked(true);
-      setTriangleDirection('triangle-up');
+      setTriangleDirection("triangle-up");
       setDetailsRender(details);
     }
-  }
+  };
 
-  const details = <div className="ing-details">
-  <IngredientList
-    title="Hops"
-    ingredients={recipe.ingredients.hops as Ingredient[]}
-  />
-  <IngredientList
-    title="Yeast"
-    ingredients={[
-      {
-        _id: "",
-        name: recipe.ingredients.yeast,
-        amount: "",
-      },
-    ]}
-  />
-  <IngredientList
-    title="Malts"
-    ingredients={recipe.ingredients.malts as Ingredient[]}
-  />
-  <InstructionList instructions={recipe.instructions} />
-</div>
+  const details = (
+    <div className="ing-details">
+      <IngredientList
+        title="Hops"
+        ingredients={recipe.ingredients.hops as Ingredient[]}
+      />
+      <IngredientList
+        title="Yeast"
+        ingredients={[
+          {
+            _id: "",
+            name: recipe.ingredients.yeast,
+            amount: "",
+          },
+        ]}
+      />
+      <IngredientList
+        title="Malts"
+        ingredients={recipe.ingredients.malts as Ingredient[]}
+      />
+      <InstructionList instructions={recipe.instructions} />
+    </div>
+  );
 
-  return <li key={recipe._id} className='recipe-item'>
-  <h3 className="recipe-name">{recipe.name}</h3>
-  <p className="recipe-description">{recipe.description}</p>
-  {detailsRender}
-  <div 
-    className={triangleDirection}
-    onClick={handleClick}
-    aria-label='dropwdown to show details'
-  ></div>
-</li>
-}
+  return (
+    <li key={recipe._id} className="recipe-item">
+      <h3 className="recipe-name">{recipe.name}</h3>
+      <p className="recipe-description">{recipe.description}</p>
+      {detailsRender}
+      <div
+        className={triangleDirection}
+        onClick={handleClick}
+        aria-label="dropwdown to show details"
+      ></div>
+    </li>
+  );
+};
 
 export default RecipeItem;

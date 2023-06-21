@@ -24,11 +24,18 @@ const MyRecipesPage: FC<MyRecipesPageProps> = ({ myRecipes, allRecipes }) => {
   };
 
   const handleSelectionFromChild = (childData: MyRecipe) => {
-    setSelectedRecipe(childData);
+    setSelectedRecipe((prevSelectedRecipe) => {
+      if (prevSelectedRecipe === childData) {
+        return null;
+      } else {
+        return childData;
+      }
+    });
   };
 
   return (
     <div className="my-recipe-container">
+      <h1>Release creativity Create your own recipe</h1>
       <div className="create-recipe">
         <CreateRecipe
           myRecipes={myRecipes}
@@ -39,11 +46,9 @@ const MyRecipesPage: FC<MyRecipesPageProps> = ({ myRecipes, allRecipes }) => {
       <div className="my-recipe-list-page">
         <MyRecipeList
           myRecipes={allMyRecipes}
+          selectedRecipe={selectedRecipe}
           onData={handleSelectionFromChild}
         />
-      </div>
-      <div className="my-recipe-details-page">
-        <MyRecipeDetails selectedRecipe={selectedRecipe} />
       </div>
     </div>
   );
