@@ -8,12 +8,12 @@ interface MyRecipeDetailsType {
 const MyRecipeDetails: FC<MyRecipeDetailsType> = ({ selectedRecipe }) => {
   return (
     <div className="my-recipe-details">
-      <h1>Details</h1>
+      <h2>Details</h2>
       {selectedRecipe && (
         <div>
-          <h2>
+          <h3>
             {selectedRecipe.name}({selectedRecipe.style})
-          </h2>
+          </h3>
 
           <h3 className="head">Ingredients:</h3>
           <ul>

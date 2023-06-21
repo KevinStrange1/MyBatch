@@ -96,6 +96,7 @@ const InventoryPage: FC<InventoryPageProps> = ({ allRecipes }) => {
 
   return (
     <div className="inventory">
+      <h1 className="inventory-title">Inventory Management</h1>
       <IngredientComponent
         ingredientType="hops"
         quantity={hops}

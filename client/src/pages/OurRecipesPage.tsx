@@ -8,14 +8,13 @@ interface OurRecipesPageProps {
 }
 
 const OurRecipesPage: FC<OurRecipesPageProps> = ({ allRecipes }) => {
-
   return (
     <div className="our-recipes">
       <div className="recipe-list containers">
-        <h2>Here are some of our most popular recipes</h2>
+        <h1>Here are some of our most popular recipes</h1>
         <ul className="ourRecipes">
           {allRecipes.map((recipe) => (
-            <RecipeItem recipe={recipe}/>
+            <RecipeItem recipe={recipe} />
           ))}
         </ul>
       </div>
