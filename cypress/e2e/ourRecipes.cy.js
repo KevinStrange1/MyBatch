@@ -12,9 +12,7 @@ describe('Our Recipes', () => {
 
     cy.contains('A rich and dark beer with flavors of roasted malt, coffee, and chocolate, balanced bitterness, and a creamy mouthfeel.').should('be.visible');
 
-    cy.contains('Stout').as('btn').click();
-
-    cy.contains('Details').should('be.visible');
+    cy.get('.triangle-down').eq(0).as('btn').click();
 
     cy.contains('Hops').should('be.visible');
 
