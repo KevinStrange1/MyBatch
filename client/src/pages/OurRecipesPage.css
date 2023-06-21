@@ -1,27 +1,66 @@
-.our-recipes {
+.recipe-list {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.our-recipes {
   background-color: var(--light-background);
+}
+
+.recipe-item {
+  border-radius: 20px;
+  background-color: var(--light-background);
+  margin: 30px 60px;
 }
 
 .ourRecipes li,
 .ourRecipes p {
   background-color: var(--light-background);
-  margin: 20px 20px 20px 0;
   padding-left: 20px;
-  border-radius: 20px;
   overflow: hidden;
-  width: 70%;
+  max-width: 700px;
 }
 
-.ourRecipes li {
-  box-shadow: rgb(255, 255, 255) 0px 2px 5px -1px,
-    rgb(255, 255, 255) 0px 1px 3px -1px;
-}
-
-.ing-details {
+.ing-details,
+.ing-ul,
+.recipe-title,
+.instructions,
+.instructions-list {
   background-color: var(--light-background);
-  box-shadow: rgb(255, 255, 255) 0px 2px 5px -1px,
-    rgb(255, 255, 255) 0px 1px 3px -1px;
-  border-radius: 20px;
-  overflow: hidden;
 }
+
+.recipe-title {
+  margin-top: 15px;
+}
+
+.ourRecipes h3 {
+  margin-top: 10px;
+}
+
+.triangle-down {
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 26px solid white;
+  background-color: var(--light-background);
+  margin-top: 5px;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.triangle-up {
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 26px solid white;
+  background-color: var(--light-background);
+  margin-top: 5px;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+

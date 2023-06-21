@@ -16,7 +16,9 @@ describe("OurRecipesPage", () => {
   it("shows ingredient and instruction details when a recipe is clicked", () => {
     render(<OurRecipesPage allRecipes={allRecipes} />);
 
-    fireEvent.click(screen.getByText("Test Recipe"));
+    const triangleDownElements = document.querySelectorAll(".triangle-down");
+    const lastTriangleDownElement = triangleDownElements[triangleDownElements.length - 1];
+    fireEvent.click(lastTriangleDownElement);
 
     expect(screen.getByText("Hops")).toBeInTheDocument();
     expect(screen.getByText("Test Hop 2")).toBeInTheDocument();
