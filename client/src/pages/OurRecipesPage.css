@@ -19,7 +19,7 @@
 }
 
 .ing-details {
-  background-color: #414141;
+  background-color: var(--light-background);
   box-shadow: rgb(255, 255, 255) 0px 2px 5px -1px,
     rgb(255, 255, 255) 0px 1px 3px -1px;
   border-radius: 20px;

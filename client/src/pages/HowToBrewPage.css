@@ -4,8 +4,11 @@
   align-items: center;
 }
 
-.box, .title, .text, .link {
-  background-color: rgb(65, 65, 65);
+.box,
+.title,
+.text,
+.link {
+  background-color: var(--light-background);
 }
 
 .box {
@@ -17,7 +20,7 @@
 
 .title {
   margin-bottom: 20px;
-} 
+}
 
 .text {
   font-family: arial;
@@ -30,4 +33,3 @@
   font-size: 18px;
   text-decoration: none;
 }
-

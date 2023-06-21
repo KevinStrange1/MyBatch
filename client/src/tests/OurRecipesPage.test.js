@@ -1,21 +1,8 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import OurRecipesPage from "../pages/OurRecipesPage";
+import { allRecipes } from "./mockData";
 
 describe("OurRecipesPage", () => {
-  const allRecipes = [
-    {
-      _id: "1",
-      name: "Test Recipe",
-      description: "This is a test recipe.",
-      instructions: ["Step 1", "Step 2", "Step 3"],
-      ingredients: {
-        hops: [{ _id: "1", name: "Test Hop", amount: "2" }],
-        malts: [{ _id: "2", name: "Test Malt", amount: "3" }],
-        yeast: "Test Yeast",
-      },
-    },
-  ];
-
   it("renders recipe list correctly", () => {
     render(<OurRecipesPage allRecipes={allRecipes} />);
 

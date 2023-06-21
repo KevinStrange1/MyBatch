@@ -14,16 +14,16 @@
 }
 
 * {
-  color: white;
+  color: var(--text);
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: rgb(37, 34, 34);
+  background-color: var(--background);
   font-family: "Libre Franklin", sans-serif;
 }
 
 .navbar {
-  background-color: rgb(65, 65, 65);
+  background-color: var(--light-background);
 }
 
 .mainNav {
@@ -38,19 +38,19 @@
   display: flex;
   justify-content: space-around;
   list-style-type: none;
-  background-color: rgb(65, 65, 65);
+  background-color: var(--light-background);
 }
 
 .mainNav li {
   align-items: stretch;
-  background-color: rgb(65, 65, 65);
+  background-color: var(--light-background);
 }
 
 .mainNav a {
   cursor: pointer;
   width: 100%;
   text-decoration: none;
-  background-color: rgb(65, 65, 65);
+  background-color: var(--light-background);
 }
 
 .mainNav a:hover {
@@ -58,10 +58,9 @@
 }
 
 .mainNav .active-link {
-
   text-decoration: underline;
 }
 
 .listNav {
-  background-color: rgb(65, 65, 65);
+  background-color: var(--light-background);
 }

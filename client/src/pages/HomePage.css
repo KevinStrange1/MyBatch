@@ -1,7 +1,7 @@
 .homepage-container {
   margin: 0 auto;
   padding: 20px;
-  background-color: rgb(37, 34, 34);
+  background-color: var(--background);
   height: auto;
 }
 
@@ -77,7 +77,7 @@
 .second p,
 .third p {
   background-color: #414141;
-  color: white;
+  color: var(--text);
   padding: 10px;
   border-radius: 20px;
   box-shadow: rgb(255, 255, 255) 0px 2px 5px -1px,

@@ -6,6 +6,9 @@ import {
   getMyRecipes,
   postMyRecipe,
 } from "../utils/ApiService";
+import { API_BASE_URL } from "./config";
+
+const url = API_BASE_URL;
 
 describe("API Functions", () => {
   beforeEach(() => {
@@ -26,9 +29,7 @@ describe("API Functions", () => {
       const ingredients = await getAllIngredients();
 
       expect(ingredients).toEqual(mockResponse);
-      expect(global.fetch).toHaveBeenCalledWith(
-        "http://localhost:3500/inventory"
-      );
+      expect(global.fetch).toHaveBeenCalledWith(`${url}/inventory`);
     });
 
     it("should log an error if fetch fails", async () => {
@@ -50,19 +51,16 @@ describe("API Functions", () => {
 
       createIngredients(ingName, ingAmount, ingType);
 
-      expect(global.fetch).toHaveBeenCalledWith(
-        "http://localhost:3500/inventory",
-        {
-          method: "POST",
-          mode: "cors",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            name: ingName,
-            amount: ingAmount,
-            type: ingType,
-          }),
-        }
-      );
+      expect(global.fetch).toHaveBeenCalledWith(`${url}/inventory`, {
+        method: "POST",
+        mode: "cors",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: ingName,
+          amount: ingAmount,
+          type: ingType,
+        }),
+      });
     });
   });
 
@@ -76,9 +74,7 @@ describe("API Functions", () => {
       const recipes = await getOurRecipes();
 
       expect(recipes).toEqual(mockResponse);
-      expect(global.fetch).toHaveBeenCalledWith(
-        "http://localhost:3500/our-recipes"
-      );
+      expect(global.fetch).toHaveBeenCalledWith(`${url}/our-recipes`);
     });
 
     it("should log an error if fetch fails", async () => {
@@ -103,7 +99,7 @@ describe("API Functions", () => {
       await deleteIngredientFromDb(ingredientId);
 
       expect(global.fetch).toHaveBeenCalledWith(
-        `http://localhost:3500/inventory/${ingredientId}`,
+        `${url}/inventory/${ingredientId}`,
         {
           method: "DELETE",
           mode: "cors",
@@ -134,9 +130,7 @@ describe("API Functions", () => {
       const recipes = await getMyRecipes();
 
       expect(recipes).toEqual(mockResponse);
-      expect(global.fetch).toHaveBeenCalledWith(
-        "http://localhost:3500/my-recipes"
-      );
+      expect(global.fetch).toHaveBeenCalledWith(`${url}/my-recipes`);
     });
 
     it("should throw an error if fetch fails", async () => {
@@ -144,9 +138,7 @@ describe("API Functions", () => {
       global.fetch.mockRejectedValueOnce(mockError);
 
       await expect(getMyRecipes()).rejects.toThrow("Failed to fetch recipes");
-      expect(global.fetch).toHaveBeenCalledWith(
-        "http://localhost:3500/my-recipes"
-      );
+      expect(global.fetch).toHaveBeenCalledWith(`${url}/my-recipes`);
     });
 
     it("should throw an error if response is not OK", async () => {
@@ -157,9 +149,7 @@ describe("API Functions", () => {
       });
 
       await expect(getMyRecipes()).rejects.toThrow("Failed to fetch recipes");
-      expect(global.fetch).toHaveBeenCalledWith(
-        "http://localhost:3500/my-recipes"
-      );
+      expect(global.fetch).toHaveBeenCalledWith(`${url}/my-recipes`);
     });
   });
 
@@ -174,9 +164,7 @@ describe("API Functions", () => {
       const recipes = await getMyRecipes();
 
       expect(recipes).toEqual(mockResponse);
-      expect(global.fetch).toHaveBeenCalledWith(
-        "http://localhost:3500/my-recipes"
-      );
+      expect(global.fetch).toHaveBeenCalledWith(`${url}/my-recipes`);
     });
 
     it("should throw an error if fetch fails", async () => {
@@ -184,9 +172,7 @@ describe("API Functions", () => {
       global.fetch.mockRejectedValueOnce(mockError);
 
       await expect(getMyRecipes()).rejects.toThrow("Fetch failed");
-      expect(global.fetch).toHaveBeenCalledWith(
-        "http://localhost:3500/my-recipes"
-      );
+      expect(global.fetch).toHaveBeenCalledWith(`${url}/my-recipes`);
     });
 
     it("should throw an error if not OK", async () => {
@@ -197,9 +183,7 @@ describe("API Functions", () => {
       });
 
       await expect(getMyRecipes()).rejects.toThrow("Failed to fetch recipes");
-      expect(global.fetch).toHaveBeenCalledWith(
-        "http://localhost:3500/my-recipes"
-      );
+      expect(global.fetch).toHaveBeenCalledWith(`${url}/my-recipes`);
     });
   });
 
@@ -212,14 +196,11 @@ describe("API Functions", () => {
 
       postMyRecipe(recipeData);
 
-      expect(global.fetch).toHaveBeenCalledWith(
-        "http://localhost:3500/my-recipes",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(recipeData),
-        }
-      );
+      expect(global.fetch).toHaveBeenCalledWith(`${url}/my-recipes`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(recipeData),
+      });
     });
 
     it("should log an error if fetch fails", async () => {

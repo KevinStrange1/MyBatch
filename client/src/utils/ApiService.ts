@@ -5,9 +5,12 @@ const baseUrl = "http://localhost:3500/inventory";
 export async function getAllIngredients() {
   try {
     const response = await fetch(baseUrl);
+    if (!response.ok) {
+      throw new Error("Failed to retrieve ingredients.");
+    }
     return response.json();
   } catch (error) {
-    console.log(error);
+    console.log("An error occurred while fetching ingredients:", error);
   }
 }
 
@@ -50,17 +53,6 @@ export async function deleteIngredientFromDb(ingredientId: string) {
   } catch (error) {
     console.error("Error:", error);
   }
-  // fetch("http://localhost:3500/inventory/" + ingredientId, {
-  //   method: "DELETE",
-  //   mode: "cors",
-  // })
-  //   .then((response) => response.json())
-  //   .then((data) => {
-  //     console.log(data);
-  //   })
-  //   .catch((error) => {
-  //     console.error("Error:", error);
-  //   });
 }
 
 export async function getMyRecipes() {
