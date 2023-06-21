@@ -1,6 +1,6 @@
 import "./App.css";
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import InventoryPage from "./pages/InventoryPage";
 import OurRecipesPage from "./pages/OurRecipesPage";
@@ -14,6 +14,7 @@ import { MyRecipe } from "./types/MyRecipe";
 import ErrorPage from "./pages/ErrorPage";
 
 const App: FC = () => {
+  const navigate = useNavigate();
   const [allRecipes, setAllRecipes] = useState<BeerRecipe[]>([]);
   const [myRecipes, setMyRecipes] = useState<MyRecipe[]>([]);
   useEffect(() => {
@@ -24,6 +25,7 @@ const App: FC = () => {
     } catch (err) {
       console.log('Server Error, Failed to Retrieve OurRecipes');
       console.error(err);
+      navigate('/error');
     }
     try {
       getMyRecipes().then((fetchedMyRecipes: MyRecipe[]) => {
@@ -32,6 +34,7 @@ const App: FC = () => {
     } catch (err) {
       console.log('Server Error, Failed to Retrieve myRecipes');
       console.error(err);
+      navigate('/error');
     }
   }, []);
 
