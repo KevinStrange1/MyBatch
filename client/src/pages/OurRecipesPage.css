@@ -30,6 +30,14 @@
   background-color: var(--light-background);
 }
 
+.recipe-title {
+  margin-top: 15px;
+}
+
+.ourRecipes h3 {
+  margin-top: 10px;
+}
+
 .triangle-down {
   width: 0;
   height: 0;

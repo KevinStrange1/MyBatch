@@ -87,6 +87,7 @@ const RecipeItem: FC<RecipeItemType> = ({recipe}) => {
   <div 
     className={triangleDirection}
     onClick={handleClick}
+    aria-label='dropwdown to show details'
   ></div>
 </li>
 }
