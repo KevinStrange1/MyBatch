@@ -11,6 +11,7 @@ import { getOurRecipes, getMyRecipes } from "./utils/ApiService";
 import { useState, useEffect, FC } from "react";
 import { BeerRecipe } from "./types/BeerRecipe";
 import { MyRecipe } from "./types/MyRecipe";
+import ErrorPage from "./pages/ErrorPage";
 
 const App: FC = () => {
   const [allRecipes, setAllRecipes] = useState<BeerRecipe[]>([]);
@@ -61,6 +62,10 @@ const App: FC = () => {
           element={<HowToBrew />}
         ></Route>
       </Routes>
+      <Route
+        path="/error"
+        element={<ErrorPage />}
+      ></Route>
     </div>
   );
 };
