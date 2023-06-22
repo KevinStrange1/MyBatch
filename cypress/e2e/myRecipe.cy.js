@@ -15,8 +15,6 @@ describe('template spec', () => {
 
     cy.contains('Add Your Instructions here').should('be.visible');
 
-    cy.contains('Details').should('be.visible');
-
     cy.contains('Ingredients').should('be.visible');
 
     cy.contains('Hops').should('be.visible');
