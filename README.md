@@ -78,3 +78,13 @@ To run tests, you have two options:
    This will open the Cypress Test Runner, where you can run the full-stack tests.
 
 ---
+
+## Contributors
+
+This project was a joint collaboration with the following contributors:
+
+- Caian Keyes
+- Marko Grahovac
+- Kevin Strange
+
+---
